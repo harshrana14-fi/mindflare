@@ -1,201 +1,460 @@
-// app/page.tsx 
+// app/page.tsx
 
 import React from 'react';
-import { Code, Users, Trophy, Mail, ArrowRight, Zap, Target, Rocket } from 'lucide-react';
+import { 
+  Code, 
+  Users, 
+  Trophy, 
+  Calendar, 
+  ArrowRight, 
+  Target, 
+  Lightbulb, 
+  BookOpen,
+  Award,
+  MapPin,
+  Clock,
+  ExternalLink,
+  Play,
+  Download,
+  Mail,
+  Phone,
+  Building
+} from 'lucide-react';
 import Navbar from '@/app/components/navbar';
+
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
+    <div className="min-h-screen bg-gray-50">
       <Navbar />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-6">
-        <div className="max-w-7xl mx-auto text-center">
-          <div className="relative">
-            <h1 className="text-6xl md:text-8xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent mb-6 animate-pulse">
-              MindFlare
-            </h1>
-            <div className="absolute -top-4 -right-4 w-8 h-8 bg-yellow-400 rounded-full animate-bounce"></div>
-            <div className="absolute -bottom-2 -left-6 w-6 h-6 bg-green-400 rounded-full animate-ping"></div>
-          </div>
-          <p className="text-xl md:text-2xl text-gray-700 mb-4 font-medium">
-            Tech Society | MAIT IT Department
-          </p>
-          <p className="text-lg text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
-            Igniting innovation, fostering collaboration, and building the future of technology. 
-            Join us in our journey to explore cutting-edge technologies and create impactful solutions.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
-              Join MindFlare <ArrowRight className="inline ml-2" size={20} />
-            </button>
-            <button className="px-8 py-4 border-2 border-blue-600 text-blue-600 rounded-full font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300">
-              View Events
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* Stats Section */}
-      <section className="py-16 px-6 bg-white/40 backdrop-blur-sm">
+      <section id="home" className="pt-24 pb-16 px-6 bg-gradient-to-br from-blue-50 via-white to-indigo-50">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div className="text-center p-6 rounded-2xl bg-gradient-to-br from-blue-100 to-blue-200 hover:scale-105 transition-transform duration-300">
-              <Users className="mx-auto mb-4 text-blue-600" size={48} />
-              <h3 className="text-3xl font-bold text-gray-800 mb-2">150+</h3>
-              <p className="text-gray-600 font-medium">Active Members</p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            
+            {/* Content */}
+            <div>
+              <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium mb-6">
+                <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                Official Technology Society - MAIT
+              </div>
+              
+              <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
+                Welcome to{' '}
+                <span className="text-blue-600">MindFlare</span>
+              </h1>
+              
+              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+                The premier technology society of Maharaja Agrasen Institute of Technology&apos;s 
+                IT Department. We foster innovation, technical excellence, and collaborative 
+                learning among aspiring technologists.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 mb-8">
+                <button className="px-8 py-4 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-all duration-200 flex items-center justify-center">
+                  Become a Member
+                  <ArrowRight className="ml-2" size={20} />
+                </button>
+                <button className="px-8 py-4 border-2 border-gray-300 text-gray-700 rounded-lg font-semibold hover:border-blue-600 hover:text-blue-600 transition-all duration-200 flex items-center justify-center">
+                  <Play className="mr-2" size={18} />
+                  Watch Introduction
+                </button>
+              </div>
+              
+              {/* Quick Stats */}
+              <div className="grid grid-cols-3 gap-6">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-gray-900">150+</div>
+                  <div className="text-sm text-gray-600">Active Members</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-gray-900">50+</div>
+                  <div className="text-sm text-gray-600">Projects Completed</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-gray-900">15+</div>
+                  <div className="text-sm text-gray-600">Annual Events</div>
+                </div>
+              </div>
             </div>
-            <div className="text-center p-6 rounded-2xl bg-gradient-to-br from-green-100 to-green-200 hover:scale-105 transition-transform duration-300">
-              <Trophy className="mx-auto mb-4 text-green-600" size={48} />
-              <h3 className="text-3xl font-bold text-gray-800 mb-2">2</h3>
-              <p className="text-gray-600 font-medium">Major Events</p>
-            </div>
-            <div className="text-center p-6 rounded-2xl bg-gradient-to-br from-purple-100 to-purple-200 hover:scale-105 transition-transform duration-300">
-              <Code className="mx-auto mb-4 text-purple-600" size={48} />
-              <h3 className="text-3xl font-bold text-gray-800 mb-2">50+</h3>
-              <p className="text-gray-600 font-medium">Projects Built</p>
-            </div>
-            <div className="text-center p-6 rounded-2xl bg-gradient-to-br from-orange-100 to-orange-200 hover:scale-105 transition-transform duration-300">
-              <Rocket className="mx-auto mb-4 text-orange-600" size={48} />
-              <h3 className="text-3xl font-bold text-gray-800 mb-2">100%</h3>
-              <p className="text-gray-600 font-medium">Innovation Rate</p>
+            
+            {/* Hero Image */}
+            <div className="relative">
+              <div className="bg-gradient-to-br from-blue-600 to-indigo-600 rounded-2xl p-8 text-white">
+                <div className="grid grid-cols-2 gap-4 mb-6">
+                  <div className="bg-white/10 rounded-lg p-4 text-center">
+                    <Code className="mx-auto mb-2" size={32} />
+                    <div className="text-sm">Development</div>
+                  </div>
+                  <div className="bg-white/10 rounded-lg p-4 text-center">
+                    <Users className="mx-auto mb-2" size={32} />
+                    <div className="text-sm">Community</div>
+                  </div>
+                  <div className="bg-white/10 rounded-lg p-4 text-center">
+                    <Trophy className="mx-auto mb-2" size={32} />
+                    <div className="text-sm">Competitions</div>
+                  </div>
+                  <div className="bg-white/10 rounded-lg p-4 text-center">
+                    <BookOpen className="mx-auto mb-2" size={32} />
+                    <div className="text-sm">Learning</div>
+                  </div>
+                </div>
+                <div className="text-center">
+                  <h3 className="text-lg font-semibold mb-2">Empowering Future Technologists</h3>
+                  <p className="text-blue-100 text-sm">Building tomorrow&apos;s technology leaders today</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* About Section */}
-      <section className="py-20 px-6">
+      <section id="about" className="py-20 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-              About <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">MindFlare</span>
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+              About MindFlare
             </h2>
-            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              MindFlare is the premier technology society of MAIT&apos;s IT Department, dedicated to fostering 
-              innovation, technical excellence, and collaborative learning among students passionate about technology.
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Established as the official technology society of MAIT&apos;s IT Department, 
+              MindFlare serves as a hub for innovation, learning, and technological advancement.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            <div className="p-8 rounded-3xl bg-gradient-to-br from-blue-50 to-indigo-100 hover:shadow-2xl transition-all duration-300 border border-blue-200">
-              <Target className="mb-6 text-blue-600" size={48} />
-              <h3 className="text-2xl font-bold text-gray-800 mb-4">Our Mission</h3>
-              <p className="text-gray-600 leading-relaxed">
-                To create a vibrant ecosystem where students can explore, learn, and innovate with cutting-edge 
-                technologies while building solutions that make a real-world impact.
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+            <div className="bg-blue-50 rounded-2xl p-8 text-center">
+              <Target className="mx-auto mb-4 text-blue-600" size={48} />
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Our Mission</h3>
+              <p className="text-gray-600">
+                To cultivate a vibrant ecosystem where students explore cutting-edge technologies, 
+                develop practical skills, and create innovative solutions for real-world challenges.
               </p>
             </div>
             
-            <div className="p-8 rounded-3xl bg-gradient-to-br from-purple-50 to-pink-100 hover:shadow-2xl transition-all duration-300 border border-purple-200">
-              <Zap className="mb-6 text-purple-600" size={48} />
-              <h3 className="text-2xl font-bold text-gray-800 mb-4">Our Vision</h3>
-              <p className="text-gray-600 leading-relaxed">
-                To be the leading tech community that bridges the gap between academic learning and industry 
-                requirements, producing future-ready technology leaders.
+            <div className="bg-indigo-50 rounded-2xl p-8 text-center">
+              <Lightbulb className="mx-auto mb-4 text-indigo-600" size={48} />
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Our Vision</h3>
+              <p className="text-gray-600">
+                To be the leading technology community that bridges academic learning with industry 
+                requirements, producing future-ready technology professionals and entrepreneurs.
               </p>
             </div>
             
-            <div className="p-8 rounded-3xl bg-gradient-to-br from-green-50 to-teal-100 hover:shadow-2xl transition-all duration-300 border border-green-200">
-              <Users className="mb-6 text-green-600" size={48} />
-              <h3 className="text-2xl font-bold text-gray-800 mb-4">Our Community</h3>
-              <p className="text-gray-600 leading-relaxed">
-                A diverse community of passionate developers, designers, and innovators working together 
-                to push the boundaries of what&apos;s possible in technology.
+            <div className="bg-green-50 rounded-2xl p-8 text-center">
+              <Users className="mx-auto mb-4 text-green-600" size={48} />
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Our Community</h3>
+              <p className="text-gray-600">
+                A diverse network of passionate students, faculty mentors, and industry experts 
+                working together to push the boundaries of technological innovation.
               </p>
+            </div>
+          </div>
+
+          {/* Faculty Coordinators */}
+          <div className="bg-gray-50 rounded-2xl p-8">
+            <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Faculty Coordinators</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="bg-white rounded-lg p-6 text-center">
+                <div className="w-20 h-20 bg-blue-600 rounded-full mx-auto mb-4 flex items-center justify-center text-white text-xl font-bold">
+                  Dr. A
+                </div>
+                <h4 className="text-lg font-semibold text-gray-900">Dr. [Faculty Name]</h4>
+                <p className="text-blue-600 mb-2">Professor, IT Department</p>
+                <p className="text-gray-600 text-sm">Ph.D. in Computer Science • 15+ years experience</p>
+              </div>
+              <div className="bg-white rounded-lg p-6 text-center">
+                <div className="w-20 h-20 bg-indigo-600 rounded-full mx-auto mb-4 flex items-center justify-center text-white text-xl font-bold">
+                  Dr. B
+                </div>
+                <h4 className="text-lg font-semibold text-gray-900">Dr. [Faculty Name]</h4>
+                <p className="text-indigo-600 mb-2">Associate Professor, IT Department</p>
+                <p className="text-gray-600 text-sm">Ph.D. in Information Technology • 12+ years experience</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Events Section */}
-      <section className="py-20 px-6 bg-gradient-to-r from-indigo-50 via-white to-purple-50">
+      <section id="events" className="py-20 px-6 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-              Our <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">Events</span>
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+              Our Flagship Events
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Challenging competitions and workshops that push the boundaries of technical excellence
+              Annual competitions and workshops that challenge students and promote 
+              technical excellence across various domains.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            
             {/* DSAXtreme Battle */}
-            <div className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-red-100 via-orange-50 to-yellow-100 p-8 hover:scale-[1.02] transition-all duration-500 border border-orange-200 shadow-lg hover:shadow-2xl">
-              <div className="absolute top-4 right-4 w-3 h-3 bg-red-400 rounded-full animate-pulse"></div>
-              <div className="flex items-center mb-6">
-                <div className="p-3 bg-gradient-to-r from-red-500 to-orange-500 rounded-2xl mr-4">
-                  <Code className="text-white" size={32} />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-gray-800">DSAXtreme Battle</h3>
-                  <p className="text-orange-600 font-semibold">Competitive Programming</p>
+            <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
+              {/* Event Image */}
+              <div className="h-64 bg-gradient-to-br from-red-500 to-orange-500 flex items-center justify-center text-white">
+                <div className="text-center">
+                  <Code size={64} className="mx-auto mb-4" />
+                  <h3 className="text-2xl font-bold">DSAXtreme Battle</h3>
+                  <p className="text-red-100">Competitive Programming Championship</p>
                 </div>
               </div>
-              <p className="text-gray-700 mb-6 leading-relaxed">
-                An intense algorithmic programming competition where the best minds compete to solve complex 
-                data structures and algorithms challenges. Test your problem-solving skills and coding prowess 
-                in this high-energy battle of logic and speed.
-              </p>
-              <div className="flex flex-wrap gap-2 mb-6">
-                <span className="px-3 py-1 bg-red-200 text-red-800 rounded-full text-sm font-medium">Algorithms</span>
-                <span className="px-3 py-1 bg-orange-200 text-orange-800 rounded-full text-sm font-medium">Problem Solving</span>
-                <span className="px-3 py-1 bg-yellow-200 text-yellow-800 rounded-full text-sm font-medium">Competition</span>
+              
+              {/* Event Content */}
+              <div className="p-8">
+                <div className="flex items-center justify-between mb-4">
+                  <span className="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium">
+                    Annual Competition
+                  </span>
+                  <div className="flex items-center text-gray-500 text-sm">
+                    <Calendar size={16} className="mr-1" />
+                    March 2024
+                  </div>
+                </div>
+                
+                <h4 className="text-xl font-bold text-gray-900 mb-3">
+                  The Ultimate Algorithmic Challenge
+                </h4>
+                
+                <p className="text-gray-600 mb-6">
+                  A prestigious programming competition where the brightest minds compete to solve 
+                  complex algorithmic problems. Participants showcase their problem-solving skills, 
+                  coding proficiency, and analytical thinking under time pressure.
+                </p>
+                
+                <div className="flex flex-wrap gap-2 mb-6">
+                  <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">
+                    Data Structures
+                  </span>
+                  <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">
+                    Algorithms
+                  </span>
+                  <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">
+                    Problem Solving
+                  </span>
+                </div>
+                
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center text-gray-500 text-sm">
+                    <Users size={16} className="mr-1" />
+                    200+ Participants
+                  </div>
+                  <button className="text-red-600 font-semibold hover:text-red-700 flex items-center">
+                    Learn More <ArrowRight size={16} className="ml-1" />
+                  </button>
+                </div>
               </div>
-              <button className="flex items-center text-red-600 font-semibold hover:text-red-700 transition-colors">
-                Learn More <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
-              </button>
             </div>
 
             {/* Build Wars */}
-            <div className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-blue-100 via-indigo-50 to-purple-100 p-8 hover:scale-[1.02] transition-all duration-500 border border-blue-200 shadow-lg hover:shadow-2xl">
-              <div className="absolute top-4 right-4 w-3 h-3 bg-blue-400 rounded-full animate-pulse"></div>
-              <div className="flex items-center mb-6">
-                <div className="p-3 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl mr-4">
-                  <Rocket className="text-white" size={32} />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-gray-800">Build Wars</h3>
-                  <p className="text-blue-600 font-semibold">Development Hackathon</p>
+            <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
+              {/* Event Image */}
+              <div className="h-64 bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center text-white">
+                <div className="text-center">
+                  <Trophy size={64} className="mx-auto mb-4" />
+                  <h3 className="text-2xl font-bold">Build Wars</h3>
+                  <p className="text-blue-100">48-Hour Development Hackathon</p>
                 </div>
               </div>
-              <p className="text-gray-700 mb-6 leading-relaxed">
-                A thrilling 48-hour hackathon where teams race against time to build innovative solutions. 
-                From web applications to mobile apps, AI projects to IoT solutions - creativity meets 
-                technical execution in this ultimate development showdown.
-              </p>
-              <div className="flex flex-wrap gap-2 mb-6">
-                <span className="px-3 py-1 bg-blue-200 text-blue-800 rounded-full text-sm font-medium">Hackathon</span>
-                <span className="px-3 py-1 bg-indigo-200 text-indigo-800 rounded-full text-sm font-medium">Innovation</span>
-                <span className="px-3 py-1 bg-purple-200 text-purple-800 rounded-full text-sm font-medium">Team Work</span>
+              
+              {/* Event Content */}
+              <div className="p-8">
+                <div className="flex items-center justify-between mb-4">
+                  <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                    Annual Hackathon
+                  </span>
+                  <div className="flex items-center text-gray-500 text-sm">
+                    <Calendar size={16} className="mr-1" />
+                    October 2024
+                  </div>
+                </div>
+                
+                <h4 className="text-xl font-bold text-gray-900 mb-3">
+                  Innovation Meets Implementation
+                </h4>
+                
+                <p className="text-gray-600 mb-6">
+                  An intensive 48-hour hackathon where teams compete to build innovative applications 
+                  from scratch. From ideation to deployment, participants experience the complete 
+                  software development lifecycle while working on real-world problems.
+                </p>
+                
+                <div className="flex flex-wrap gap-2 mb-6">
+                  <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">
+                    Web Development
+                  </span>
+                  <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">
+                    Mobile Apps
+                  </span>
+                  <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">
+                    AI/ML
+                  </span>
+                </div>
+                
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center text-gray-500 text-sm">
+                    <Users size={16} className="mr-1" />
+                    50+ Teams
+                  </div>
+                  <button className="text-blue-600 font-semibold hover:text-blue-700 flex items-center">
+                    Learn More <ArrowRight size={16} className="ml-1" />
+                  </button>
+                </div>
               </div>
-              <button className="flex items-center text-blue-600 font-semibold hover:text-blue-700 transition-colors">
-                Learn More <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
-              </button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 px-6 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 text-white">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Ready to Ignite Your Tech Journey?
-          </h2>
-          <p className="text-xl mb-12 opacity-90 leading-relaxed">
-            Join MindFlare and be part of a community that&apos;s shaping the future of technology. 
-            Whether you&apos;re a beginner or an expert, there&apos;s a place for you here.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <button className="px-10 py-4 bg-white text-blue-600 rounded-full font-bold text-lg hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
-              Join Our Community
-            </button>
-            <button className="px-10 py-4 border-2 border-white text-white rounded-full font-bold text-lg hover:bg-white hover:text-blue-600 transition-all duration-300">
-              Contact Us
-            </button>
+      {/* Achievements Section */}
+      <section className="py-20 px-6 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+              Our Achievements
+            </h2>
+            <p className="text-xl text-gray-600">
+              Recognition and accomplishments that reflect our commitment to excellence
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="text-center bg-blue-50 rounded-2xl p-6">
+              <Award className="mx-auto mb-4 text-blue-600" size={48} />
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">Best Tech Society</h3>
+              <p className="text-gray-600">MAIT Excellence Awards 2023</p>
+            </div>
+            
+            <div className="text-center bg-green-50 rounded-2xl p-6">
+              <Trophy className="mx-auto mb-4 text-green-600" size={48} />
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">15+ Competitions</h3>
+              <p className="text-gray-600">Successfully organized events</p>
+            </div>
+            
+            <div className="text-center bg-purple-50 rounded-2xl p-6">
+              <Users className="mx-auto mb-4 text-purple-600" size={48} />
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">1000+ Students</h3>
+              <p className="text-gray-600">Impacted through our programs</p>
+            </div>
+            
+            <div className="text-center bg-orange-50 rounded-2xl p-6">
+              <Code className="mx-auto mb-4 text-orange-600" size={48} />
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">200+ Projects</h3>
+              <p className="text-gray-600">Student projects showcased</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="py-20 px-6 bg-gray-900 text-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            
+            {/* Contact Info */}
+            <div>
+              <h2 className="text-3xl lg:text-4xl font-bold mb-6">
+                Get in Touch
+              </h2>
+              <p className="text-xl text-gray-300 mb-8">
+                Have questions about MindFlare or want to join our community? 
+                We&apos;d love to hear from you.
+              </p>
+              
+              <div className="space-y-6">
+                <div className="flex items-start space-x-4">
+                  <Phone className="text-blue-400 mt-1" size={24} />
+                  <div>
+                    <h3 className="font-semibold text-lg">Call Us</h3>
+                    <p className="text-gray-300">+91 xxxxxxxxxx</p>
+                    <p className="text-gray-300">+91 xxxxxxxxxx</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start space-x-4">
+                  <Clock className="text-blue-400 mt-1" size={24} />
+                  <div>
+                    <h3 className="font-semibold text-lg">Office Hours</h3>
+                    <p className="text-gray-300">Monday - Friday: 9:00 AM - 5:00 PM</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Contact Form */}
+            <div className="bg-gray-800 rounded-2xl p-8">
+              <h3 className="text-2xl font-bold mb-6">Send us a Message</h3>
+              <form className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-300 mb-2">
+                      First Name
+                    </label>
+                    <input
+                      type="text"
+                      className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      placeholder="Enter your first name"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-300 mb-2">
+                      Last Name
+                    </label>
+                    <input
+                      type="text"
+                      className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      placeholder="Enter your last name"
+                    />
+                  </div>
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-medium text-gray-300 mb-2">
+                    Email Address
+                  </label>
+                  <input
+                    type="email"
+                    className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder="Enter your email address"
+                  />
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-medium text-gray-300 mb-2">
+                    Subject
+                  </label>
+                  <select className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    <option>General Inquiry</option>
+                    <option>Membership Application</option>
+                    <option>Event Information</option>
+                    <option>Collaboration Proposal</option>
+                    <option>Technical Support</option>
+                  </select>
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-medium text-gray-300 mb-2">
+                    Message
+                  </label>
+                  <textarea
+                    rows={5}
+                    className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder="Tell us how we can help you..."
+                  ></textarea>
+                </div>
+                
+                <button
+                  type="submit"
+                  className="w-full px-8 py-4 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-all duration-200 flex items-center justify-center"
+                >
+                  Send Message
+                  <ArrowRight className="ml-2" size={20} />
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </section>
