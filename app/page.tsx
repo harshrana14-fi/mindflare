@@ -10,19 +10,9 @@ import {
   Target, 
   Lightbulb, 
   BookOpen,
-  Award,
-  MapPin,
-  Clock,
-  ExternalLink,
-  Play,
-  Download,
-  Mail,
-  Phone,
-  Building
-} from 'lucide-react';
+  Award} from 'lucide-react';
 import Navbar from '@/app/components/navbar';
 import Footer from '@/app/components/footer';
-import { PiStudent } from 'react-icons/pi';
 
 
 export default function Home() {
@@ -59,7 +49,7 @@ export default function Home() {
                   <ArrowRight className="ml-2" size={20} />
                 </button>
                 <button className="px-8 py-4 border-2 border-gray-300 text-gray-700 rounded-lg font-semibold hover:border-blue-600 hover:text-blue-600 transition-all duration-200 flex items-center justify-center">
-                  <PiStudent className="mr-2" size={18} />
+                  <Trophy className="mr-2" size={18} />
                   View Events
                 </button>
               </div>
