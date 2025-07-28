@@ -1,7 +1,7 @@
 // components/navbar.tsx
 
 "use client";
-
+import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import {
   Menu,
@@ -36,7 +36,7 @@ export default function Navbar() {
   }, []);
 
   const navItems = [
-    { name: "Home", href: "#home", icon: Home },
+    { name: "Home", href: "#", icon: Home },
     {
       name: "About",
       href: "#about",
@@ -67,7 +67,7 @@ export default function Navbar() {
         { name: "Alumni", href: "#alumni" },
       ],
     },
-    { name: "Contact", href: "#contact", icon: Mail },
+    { name: "Contact", href: "/contact", icon: Mail },
   ];
 
   const handleDropdownToggle = (itemName: string) => {
@@ -97,7 +97,7 @@ export default function Navbar() {
                 <div className="flex items-center space-x-3">
                   <div className="w-10 h-10 rounded-lg overflow-hidden border-2 border-blue-100 shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105">
                     <Image
-                      src="/logo.jpg" // replace with actual path if different
+                      src="/logo.jpg"
                       alt="MindFlare Logo"
                       width={40}
                       height={40}
@@ -121,30 +121,41 @@ export default function Navbar() {
                   const IconComponent = item.icon;
                   return (
                     <div key={item.name} className="relative">
-                      <button
-                        onClick={() =>
-                          item.dropdown && handleDropdownToggle(item.name)
-                        }
-                        className={`flex items-center space-x-2 px-3 py-2 rounded-lg text-gray-700 hover:text-blue-600 transition-all duration-300 font-medium relative overflow-hidden group ${
-                          activeDropdown === item.name
-                            ? "bg-blue-50 text-blue-600 shadow-md"
-                            : "hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 hover:shadow-md"
-                        }`}
-                      >
-                        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-indigo-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                        <IconComponent size={16} className="relative z-10" />
-                        <span className="relative z-10 text-sm">{item.name}</span>
-                        {item.dropdown && (
+                      {item.dropdown ? (
+                        <button
+                          onClick={() => handleDropdownToggle(item.name)}
+                          className={`flex items-center space-x-2 px-3 py-2 rounded-lg text-gray-700 hover:text-blue-600 transition-all duration-300 font-medium relative overflow-hidden group ${
+                            activeDropdown === item.name
+                              ? "bg-blue-50 text-blue-600 shadow-md"
+                              : "hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 hover:shadow-md"
+                          }`}
+                        >
+                          <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-indigo-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                          <IconComponent size={16} className="relative z-10" />
+                          <span className="relative z-10 text-sm">
+                            {item.name}
+                          </span>
                           <ChevronDown
                             size={14}
                             className={`relative z-10 transition-transform duration-300 ${
                               activeDropdown === item.name ? "rotate-180" : ""
                             }`}
                           />
-                        )}
-                      </button>
+                        </button>
+                      ) : (
+                        <Link
+                          href={item.href}
+                          className="flex items-center space-x-2 px-3 py-2 rounded-lg text-gray-700 hover:text-blue-600 transition-all duration-300 font-medium relative overflow-hidden group hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 hover:shadow-md"
+                        >
+                          <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-indigo-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                          <IconComponent size={16} className="relative z-10" />
+                          <span className="relative z-10 text-sm">
+                            {item.name}
+                          </span>
+                        </Link>
+                      )}
 
-                      {/* Dropdown Menu */}
+                      {/* Dropdown menu remains unchanged */}
                       {item.dropdown && activeDropdown === item.name && (
                         <div className="absolute top-full left-0 mt-3 w-60 bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-gray-200/50 py-3 z-50 animate-in slide-in-from-top-2 duration-300">
                           <div className="absolute -top-2 left-6 w-4 h-4 bg-white/95 border-l border-t border-gray-200/50 rotate-45 backdrop-blur-xl"></div>
@@ -226,7 +237,10 @@ export default function Navbar() {
                         onClick={() => setIsOpen(false)}
                         className="flex items-center space-x-3 p-4 rounded-xl text-gray-700 hover:text-blue-600 hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 transition-all duration-300 hover:shadow-md group"
                       >
-                        <IconComponent size={20} className="group-hover:scale-110 transition-transform duration-300" />
+                        <IconComponent
+                          size={20}
+                          className="group-hover:scale-110 transition-transform duration-300"
+                        />
                         <span className="font-medium">{item.name}</span>
                       </a>
                       {item.dropdown && (

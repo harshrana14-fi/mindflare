@@ -21,6 +21,8 @@ import {
   Building
 } from 'lucide-react';
 import Navbar from '@/app/components/navbar';
+import Footer from '@/app/components/footer';
+import { PiStudent } from 'react-icons/pi';
 
 
 export default function Home() {
@@ -57,8 +59,8 @@ export default function Home() {
                   <ArrowRight className="ml-2" size={20} />
                 </button>
                 <button className="px-8 py-4 border-2 border-gray-300 text-gray-700 rounded-lg font-semibold hover:border-blue-600 hover:text-blue-600 transition-all duration-200 flex items-center justify-center">
-                  <Play className="mr-2" size={18} />
-                  Watch Introduction
+                  <PiStudent className="mr-2" size={18} />
+                  View Events
                 </button>
               </div>
               
@@ -349,115 +351,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="py-20 px-6 bg-gray-900 text-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            
-            {/* Contact Info */}
-            <div>
-              <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-                Get in Touch
-              </h2>
-              <p className="text-xl text-gray-300 mb-8">
-                Have questions about MindFlare or want to join our community? 
-                We&apos;d love to hear from you.
-              </p>
-              
-              <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <Phone className="text-blue-400 mt-1" size={24} />
-                  <div>
-                    <h3 className="font-semibold text-lg">Call Us</h3>
-                    <p className="text-gray-300">+91 xxxxxxxxxx</p>
-                    <p className="text-gray-300">+91 xxxxxxxxxx</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start space-x-4">
-                  <Clock className="text-blue-400 mt-1" size={24} />
-                  <div>
-                    <h3 className="font-semibold text-lg">Office Hours</h3>
-                    <p className="text-gray-300">Monday - Friday: 9:00 AM - 5:00 PM</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            {/* Contact Form */}
-            <div className="bg-gray-800 rounded-2xl p-8">
-              <h3 className="text-2xl font-bold mb-6">Send us a Message</h3>
-              <form className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-300 mb-2">
-                      First Name
-                    </label>
-                    <input
-                      type="text"
-                      className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                      placeholder="Enter your first name"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-300 mb-2">
-                      Last Name
-                    </label>
-                    <input
-                      type="text"
-                      className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                      placeholder="Enter your last name"
-                    />
-                  </div>
-                </div>
-                
-                <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">
-                    Email Address
-                  </label>
-                  <input
-                    type="email"
-                    className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    placeholder="Enter your email address"
-                  />
-                </div>
-                
-                <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">
-                    Subject
-                  </label>
-                  <select className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                    <option>General Inquiry</option>
-                    <option>Membership Application</option>
-                    <option>Event Information</option>
-                    <option>Collaboration Proposal</option>
-                    <option>Technical Support</option>
-                  </select>
-                </div>
-                
-                <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">
-                    Message
-                  </label>
-                  <textarea
-                    rows={5}
-                    className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    placeholder="Tell us how we can help you..."
-                  ></textarea>
-                </div>
-                
-                <button
-                  type="submit"
-                  className="w-full px-8 py-4 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-all duration-200 flex items-center justify-center"
-                >
-                  Send Message
-                  <ArrowRight className="ml-2" size={20} />
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Footer/>
     </div>
   );
 }
